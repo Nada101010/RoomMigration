@@ -4,8 +4,12 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.MutableLiveData;
 
-import com.idemia.roomdbmigration.viewmodels.book.model.Book;
+import com.idemia.roomdbmigration.db.entitiy.book.Book;
+
+import java.util.List;
+
 
 public class BookViewModel extends AndroidViewModel {
 
@@ -14,14 +18,14 @@ public class BookViewModel extends AndroidViewModel {
     public BookViewModel(@NonNull Application application) {
         super(application);
 
-        bookRepository = new BookRepository();
+        bookRepository = new BookRepository(getApplication().getApplicationContext());
     }
 
-    public void insertBook(Book book) {
-        bookRepository.insertBook(book);
+    public MutableLiveData<Long> insertBook(Book book) {
+        return bookRepository.insertBook(book);
     }
 
-    public Book getBookData() {
+    public MutableLiveData<List<Book>> getBookData() {
         return bookRepository.getBookData();
     }
 }

@@ -5,11 +5,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_insert"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -20,10 +22,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_get_data"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="get Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_backup_db"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Back up db"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
